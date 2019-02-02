@@ -2,6 +2,7 @@
 
 import { LOAD_PHONES } from './actions';
 import { SEARCH_PHONES } from "../Search/actions";
+import { SORT_PHONES } from "../Sort/action";
 
 const initialState = {
 
@@ -32,8 +33,16 @@ function PhoneListReducer( state = initialState , action ) {
             };
         }
 
-    }//switch
+        case SORT_PHONES:{
 
+            return {
+                ...state,
+                phones: action.payload
+            };
+        }
+
+    }//switch
+    
     return state;
 
 }//PhoneListReducer

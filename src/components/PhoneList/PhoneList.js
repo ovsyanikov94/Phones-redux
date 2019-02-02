@@ -34,7 +34,9 @@ class PhoneListComponent extends React.Component{
 
         const { phones } = this.props;
 
-        const phonesHTML = phones.map( phone =>  <PhoneComponent phone={phone} /> );
+        const phonesHTML = phones.map( phone =>
+            
+            <PhoneComponent key = {phone.id} phone={phone} /> );
 
         return (
             <ul className='phones'>

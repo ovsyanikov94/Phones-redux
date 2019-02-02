@@ -9,7 +9,6 @@ class PhoneService{
             let response = await fetch( path );
 
             response = await response.json();
-            console.log(response);
 
             return response;
 

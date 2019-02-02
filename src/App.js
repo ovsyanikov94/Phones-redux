@@ -4,6 +4,8 @@ import PhoneListWrapperComponent from './components/PhoneList/PhoneListWrapperCo
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import SearchWrapperComponent from "./components/Search/SearchWrapper";
+import SortWrapperComponent from "./components/Sort/SortWrapperComponent";
+
 
 class App extends Component {
   render() {
@@ -15,13 +17,7 @@ class App extends Component {
 
                         <SearchWrapperComponent />
 
-                        <p>
-                            Sort by:
-                            <select>
-                                <option value="name">Alphabetical</option>
-                                <option value="age">Newest</option>
-                            </select>
-                        </p>
+                        <SortWrapperComponent/>
                     </section>
 
                     <section>
