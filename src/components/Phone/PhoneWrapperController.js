@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Search from "./Search";
+import Phone from "./Phone";
 
 import {
-    searchPhonesActionCreator
-} from '../../store/Search/actions';
+    AddInCartActionCreator
+} from '../../store/Phone/actions';
 
 
-class SearchWrapperComponent extends React.Component{
+class PhoneWrapperController extends React.Component{
 
     constructor( props ){
 
@@ -18,15 +18,16 @@ class SearchWrapperComponent extends React.Component{
     render(){
 
         const {
-            phones,
-            searchPhonesSuccess
+            cart,
+            addInCartSuccess,
+            phone
         } = this.props;
 
-
         return (
-            <Search
-                phones={phones}
-                onSearchPhonesSuccess={searchPhonesSuccess}
+            <Phone
+                phone={phone}
+                cart={cart}
+                onAddInCart={addInCartSuccess}
             />
         );
     }
@@ -36,15 +37,15 @@ class SearchWrapperComponent extends React.Component{
 const mapStateToProps = ( state )=>{
 
     return {
-        phones: state.phone.phones
+        cart: state.cart.cart
     }; // PROPS
 
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        searchPhonesSuccess: ( phones ) => {
-            dispatch( searchPhonesActionCreator( phones ))
+        addInCartSuccess: ( phones ) => {
+            dispatch( AddInCartActionCreator( phones ))
         }
     };
 };
@@ -53,4 +54,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
     mapStateToProps ,
     mapDispatchToProps
-)(SearchWrapperComponent);
+)(PhoneWrapperController);

@@ -1,5 +1,6 @@
 import React from 'react';
 import PhoneComponent from "../Phone/Phone";
+import PhoneWrapperController from "../Phone/PhoneWrapperController";
 
 import PhoneService from '../../services/PhoneService';
 
@@ -36,7 +37,7 @@ class PhoneListComponent extends React.Component{
 
         const phonesHTML = phones.map( phone =>
             
-            <PhoneComponent key = {phone.id} phone={phone} /> );
+            <PhoneWrapperController key = {phone.id} phone={phone} /> );
 
         return (
             <ul className='phones'>

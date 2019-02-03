@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import SearchWrapperComponent from "./components/Search/SearchWrapper";
 import SortWrapperComponent from "./components/Sort/SortWrapperComponent";
+import CartWrapperComponent from "./components/Cart/CartWrapperComponent";
 
 
 class App extends Component {
@@ -20,14 +21,7 @@ class App extends Component {
                         <SortWrapperComponent/>
                     </section>
 
-                    <section>
-                        <p>Shopping Cart</p>
-                        <ul>
-                            <li>Phone 1</li>
-                            <li>Phone 2</li>
-                            <li>Phone 3</li>
-                        </ul>
-                    </section>
+                    <CartWrapperComponent/>
                 </div>
 
                 <div className="col-md-10">
