@@ -4,6 +4,11 @@ import PhoneListWrapperComponent from './components/PhoneList/PhoneListWrapperCo
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import SearchWrapperComponent from "./components/Search/SearchWrapper";
+import SortWrapperComponent from "./components/Sort/SortWrapperComponent";
+import CartWrapperComponent from "./components/Cart/CartWrapperComponent";
+
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import SinglePhoneComponent from "./components/SinglePhone/SinglePhone";
 
 class App extends Component {
   render() {
@@ -15,28 +20,22 @@ class App extends Component {
 
                         <SearchWrapperComponent />
 
-                        <p>
-                            Sort by:
-                            <select>
-                                <option value="name">Alphabetical</option>
-                                <option value="age">Newest</option>
-                            </select>
-                        </p>
+                        <SortWrapperComponent/>
                     </section>
 
-                    <section>
-                        <p>Shopping Cart</p>
-                        <ul>
-                            <li>Phone 1</li>
-                            <li>Phone 2</li>
-                            <li>Phone 3</li>
-                        </ul>
-                    </section>
+                    <CartWrapperComponent/>
                 </div>
-
                 <div className="col-md-10">
-                    <PhoneListWrapperComponent />
+                    <Router>
+                        <div>
+                            <Route exact  path='/' component={PhoneListWrapperComponent} />
+                            <Route path='/:id' component={SinglePhoneComponent} />
+                        </div>
+
+                    </Router>
                 </div>
+
+
             </div>
         </div>
 
