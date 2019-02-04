@@ -1,5 +1,6 @@
 import React from 'react';
 import CartService from "../../services/CartService";
+import {Link} from "react-router-dom";
 
 class PhoneComponent extends React.Component{
 
@@ -25,9 +26,11 @@ class PhoneComponent extends React.Component{
 
         return (
             <li className="thumbnail">
-                <a href="#!/phones/motorola-xoom-with-wi-fi" className="thumb">
-                    <img alt="Motorola XOOM™ with Wi-Fi" src={phone.imageUrl} />
-                </a>
+
+                <Link to={phone.id} className="thumb">
+                    <img alt="fail" src={phone.imageUrl} />
+                </Link>
+
 
                 {(
 
@@ -39,7 +42,11 @@ class PhoneComponent extends React.Component{
 
                 )}
 
-                <a href="#!/phones/motorola-xoom-with-wi-fi">{phone.name}</a>
+                <Link to={phone.id}>
+                    {phone.name}
+                </Link>
+
+                {/*<a href="#!/phones/motorola-xoom-with-wi-fi">{phone.name}</a>*/}
                 <p>{phone.snippet}</p>
 
             </li>

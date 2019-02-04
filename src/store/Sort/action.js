@@ -10,5 +10,6 @@ export function sortPhonesActionCreator(phones){
 
     SORT_PHONES_ACTION.payload = phones;
 
-    return SORT_PHONES_ACTION
+    return SORT_PHONES_ACTION;
+
 }//sortPhonesActionCreator

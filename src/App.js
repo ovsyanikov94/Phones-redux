@@ -7,6 +7,8 @@ import SearchWrapperComponent from "./components/Search/SearchWrapper";
 import SortWrapperComponent from "./components/Sort/SortWrapperComponent";
 import CartWrapperComponent from "./components/Cart/CartWrapperComponent";
 
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import SinglePhoneComponent from "./components/SinglePhone/SinglePhone";
 
 class App extends Component {
   render() {
@@ -23,10 +25,17 @@ class App extends Component {
 
                     <CartWrapperComponent/>
                 </div>
-
                 <div className="col-md-10">
-                    <PhoneListWrapperComponent />
+                    <Router>
+                        <div>
+                            <Route exact  path='/' component={PhoneListWrapperComponent} />
+                            <Route path='/:id' component={SinglePhoneComponent} />
+                        </div>
+
+                    </Router>
                 </div>
+
+
             </div>
         </div>
 

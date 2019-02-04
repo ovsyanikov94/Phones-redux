@@ -37,7 +37,8 @@ function PhoneListReducer( state = initialState , action ) {
 
             return {
                 ...state,
-                phones: action.payload
+                phones: action.payload,
+                isUpdated: true,
             };
         }
 
